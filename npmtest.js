@@ -8,4 +8,4 @@ server.on('listening',function(){
     console.log('ok, server is running');
 });
 
-server.listen(80);
+server.listen(8080);
