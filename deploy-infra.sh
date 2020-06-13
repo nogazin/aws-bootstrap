@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STACK_NAME=awsbootstrap
+STACK_NAME=awsbootstrap3
 REGION=us-east-1
 CLI_PROFILE=awsbootstrap
 
@@ -15,12 +15,6 @@ GH_OWNER=$(cat ~/.github/aws-bootstrap-owner)
 GH_REPO=$(cat ~/.github/aws-bootstrap-repo)
 GH_BRANCH=master
 
-#Display GitHub environment variables
-echo -e "\n\n=========== Display GitHub environment variables ==========="
-echo -e "\n Access Token = $GH_ACCESS_TOKEN"
-echo -e "\n Owner = $GH_OWNER"
-echo -e "\n Repo = $GH_REPO"
-echo -e "\n Branch = $GH_BRANCH"
 
 #Deploy the Cloudformation template
 echo -e "\n\n=========== Deploying setup.yaml ==========="
