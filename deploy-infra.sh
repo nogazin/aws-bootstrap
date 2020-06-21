@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STACK_NAME=awsbootstrap3
+STACK_NAME=awsbootstrap
 REGION=us-east-1
 CLI_PROFILE=awsbootstrap
 
@@ -49,5 +49,5 @@ aws cloudformation deploy \
 if [ $? -eq 0 ]; then
   aws cloudformation list-exports \
     --profile awsbootstrap \
-    --query "Exports[?Name=='InstanceEndpoint'].Value"
+    --query "Exports[?starts_with(Name,'InstanceEndpoint')].Value"
 fi
