@@ -4,8 +4,26 @@ Parameters:
   CodePipelineBucket:
     Type: String
     Description: 'The S3 bucket for CodePipeline artifacts'
+  CloudFormationBucket:
+    Type: String
+    Description: 'The S3 bucket for the CloudFormation templates.'
 
 Resources:
+  CloudFormationS3Bucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: !Ref CloudFormationBucket
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+  
   CodePipelineS3Bucket:
     Type: AWS::S3::Bucket
     DeletionPolicy: Retain

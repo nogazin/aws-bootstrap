@@ -2,7 +2,6 @@
 source /home/ec2-user/.bash_profile
 cd /home/ec2-user/app/release
 
-cd /home/ec2-user/app/release
 # Query the EC2 metadata service for this instance's region
 REGION=`curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | jq .region -r`
 # Query the EC2 metadata service for this instance's instance-id
