@@ -9,7 +9,7 @@ export INSTANCE_ID=`curl -s http://169.254.169.254/latest/meta-data/instance-id`
 # Query EC2 describeTags method and pull out the CFN Logical ID for this instance
 export STACK_NAME=`aws --region $REGION ec2 describe-tags \
 --filters "Name=resource-id,Values=${INSTANCE_ID}" \
-          "Name=key, Values=aws:cloudformation:stack-name"
+          "Name=key, Values=aws:cloudformation:stack-name" \
 | jq -r ".Tags[0].Value"`
 
 npm  run start
