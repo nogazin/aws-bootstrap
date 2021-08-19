@@ -1,4 +1,4 @@
-#teas
+#te
 
 var http=require('http');
 
