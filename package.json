@@ -8,6 +8,6 @@
     "build": "echo 'Building...'"
   },
   "dependencies": {
-    "pm2": "^4.4.0"
+    "pm2": "^5.2.0"
   }
 }
